@@ -1,11 +1,13 @@
-body {
+body, html {
   color: #111827;
+  background-color: #1c1c1c;
 }
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
+  background-color: white;
 
 }
 
@@ -18,22 +20,29 @@ select {
   font-size: 0.9rem;
   padding: 1px 7px;
   width: 250px;
-  height: 30px;
+  height: 40px;
   border: 1px solid #D1D5DB;
   border-radius: 5px;
+  margin-right: 20px;
 }
 
 button {
-  height: 30px;
+  height: 40px;
+  padding: 0 8px;
   font-size: 12px;
   background-color: white;
   border: 1px solid #D1D5DB;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #D1D5DB;
 }
 
 .container {
   width: 500px;
   height: 500px;
-  margin: 0 auto;
-  border: 1px solid #D1D5DB;
+  margin: 30px auto;
+  background-color: white;
 }

@@ -18,24 +18,32 @@ btn.addEventListener("click", (e) => {
       console.log(data)
       container.innerHTML = "";
 
-        // Loop through the colors and create divs
-        data.colors.forEach(color => {
-          const colorDiv = document.createElement("div");
-          colorDiv.style.backgroundColor = color.hex.value; // Set the background color
-          colorDiv.style.width = "100px";
-          colorDiv.style.height = "100vh";
-          colorDiv.style.margin = "0";
-          colorDiv.style.display = "inline-block";
-          colorDiv.title = color.hex.value; // Tooltip to show the hex value
 
+       // Loop through the colors and create divs
+    data.colors.forEach(color => {
+      const colorColumn = document.createElement("div");
+      colorColumn.style.display = "inline-block";
+      colorColumn.style.textAlign = "center";
+      colorColumn.style.margin = "0";
+      colorColumn.style.width = "100px";
 
+      const colorDiv = document.createElement("div");
+      colorDiv.style.backgroundColor = color.hex.value;
+      colorDiv.style.width = "100%";
+      colorDiv.style.height = "500px";
+      colorDiv.title = color.hex.value; // Tooltip to show the hex value
 
-          container.appendChild(colorDiv); // Add the div to the container
-        });
+      const hexValue = document.createElement("p");
+      hexValue.textContent = color.hex.value;
+      hexValue.style.padding = "20px 0";
+      hexValue.style.backgroundColor = "white";
+      hexValue.style.fontSize = "12px"
 
-
-
-    })
+      colorColumn.appendChild(colorDiv);
+      colorColumn.appendChild(hexValue);
+      container.appendChild(colorColumn);
+    });
+  })
     .catch((error) => console.error("Error fetching color scheme:", error));
-})
+  })
 })
